@@ -1,0 +1,24 @@
+header {
+  background: #218ce4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem; }
+  header h1 {
+    color: black; }
+  header ul {
+    width: 20%; }
+    header ul .logged-in {
+      width: 100%; }
+    header ul .logged-out {
+      width: 54%; }
+    header ul div {
+      display: flex;
+      justify-content: space-between; }
+      header ul div li {
+        background: white;
+        padding: 0.5rem;
+        border-radius: 0.2rem;
+        box-shadow: 4px 4px 8px 2px #0000006c; }
+        header ul div li a {
+          color: #218ce4; }

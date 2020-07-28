@@ -1,3 +1,50 @@
 body {
-  background: lightpink;
+  // background: lightpink;
+}
+
+//feed post styles
+#feed-posts {
+  #new-post-form {
+    textarea {
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    input[type="submit"] {
+      font-size: 1.5rem;
+      background: #218ce4;
+      outline: none;
+      border: none;
+      color: white;
+      padding: 0.3rem 1rem;
+      border-radius: 0.2rem;
+      cursor: pointer;
+    }
+  }
+
+  #posts-list-container {
+    overflow-y: scroll;
+    height: 75vh;
+
+    //style for displaying each post
+    ul li {
+      margin-bottom: 3rem;
+
+      div {
+        margin-bottom: 0.2rem;
+
+        .post-username {
+          font-size: 1.3rem;
+        }
+
+        .post-card {
+          height: 10rem;
+          width: 20rem;
+          border: 2px solid #218ce4;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
 }

@@ -1,0 +1,16 @@
+input {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+}
+input[type="submit"] {
+  border: none;
+  background: #218ce4;
+  padding: 0.3rem 1rem;
+  border-radius: 0.2rem;
+  color: white;
+}

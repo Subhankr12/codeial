@@ -1,0 +1,41 @@
+header {
+  background: #218ce4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+
+  //style for site logo name
+  h1 {
+    color: black;
+  }
+
+  //style for sign in and sign up
+  ul {
+    width: 20%;
+
+    .logged-in {
+      width: 100%;
+    }
+
+    .logged-out {
+      width: 54%;
+    }
+
+    div {
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        background: white;
+        padding: 0.5rem;
+        border-radius: 0.2rem;
+        box-shadow: 4px 4px 8px 2px #0000006c;
+
+        a {
+          color: #218ce4;
+        }
+      }
+    }
+  }
+}
