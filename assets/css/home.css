@@ -13,17 +13,14 @@
   border-radius: 0.2rem;
   cursor: pointer; }
 
-#feed-posts #posts-list-container {
-  overflow-y: scroll;
-  height: 75vh; }
-  #feed-posts #posts-list-container ul li {
-    margin-bottom: 3rem; }
-    #feed-posts #posts-list-container ul li div {
-      margin-bottom: 0.2rem; }
-      #feed-posts #posts-list-container ul li div .post-username {
-        font-size: 1.3rem; }
-      #feed-posts #posts-list-container ul li div .post-card {
-        height: 10rem;
-        width: 20rem;
-        border: 2px solid #218ce4;
-        word-wrap: break-word; }
+#feed-posts #posts-list-container ul li {
+  margin-bottom: 3rem; }
+  #feed-posts #posts-list-container ul li div {
+    margin-bottom: 0.2rem; }
+    #feed-posts #posts-list-container ul li div .post-username {
+      font-size: 1.3rem; }
+    #feed-posts #posts-list-container ul li div .post-card {
+      height: 10rem;
+      width: 20rem;
+      border: 2px solid #218ce4;
+      word-wrap: break-word; }
