@@ -9,6 +9,9 @@ module.exports.create = async (req, res) => {
     });
 
     if (req.xhr) {
+      // populate the post with user name only and don't send the password along with it
+      post = await post.populate("user", "name").execPopulate();
+
       return res.status(200).json({
         data: {
           post: post,
