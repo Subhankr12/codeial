@@ -70,6 +70,14 @@
    `);
   };
 
+  // method to iterate over all post  delete button
+  let iterate_post = () => {
+    var loop = $(" .delete-post-button");
+    for (i of loop) {
+      deletePost(i);
+    }
+  };
+
   // method to delete a post from DOM
   let deletePost = (deleteLink) => {
     $(deleteLink).click((e) => {
@@ -97,4 +105,5 @@
   };
 
   createPost();
+  iterate_post();
 }
