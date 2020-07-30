@@ -15,7 +15,22 @@ module.exports.create = async (req, res) => {
       post.comments.push(comment);
       post.save();
 
-      res.redirect("/");
+      if (req.xhr) {
+        // populate comment with name only
+        comment = await comment
+          .populate("user", "name")
+          .populate("post", "_id")
+          .execPopulate();
+
+        return res.status(200).json({
+          data: {
+            comment: comment,
+          },
+          message: "Comment Added",
+        });
+      }
+
+      return res.redirect("/");
     }
   } catch (err) {
     console.log("Error:", err);

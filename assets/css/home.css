@@ -26,7 +26,7 @@
           width: 20rem;
           border: 2px solid #218ce4;
           word-wrap: break-word; }
-        #home-container #feed-posts #posts-list-container ul li div #comments-container {
+        #home-container #feed-posts #posts-list-container ul li div .comments-container {
           margin-bottom: 0; }
   #home-container #user-friends {
     width: 30%;
