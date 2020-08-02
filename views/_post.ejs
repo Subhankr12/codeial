@@ -1,4 +1,4 @@
-<li id="post-<%= post.id %>">
+<li id="post-<%= post._id %>">
   <div>
     <small class="post-username">
       <%= post.user.name %>
@@ -17,7 +17,11 @@
   </div>
   <div class="post-comments">
     <% if(locals.user) {%>
-    <form action="/comments/create" method="POST" id="new-comment-form">
+    <form
+      action="/comments/create"
+      method="POST"
+      id="post-<%= post._id %>-comments-form"
+    >
       <input
         type="text"
         name="content"
@@ -27,12 +31,13 @@
       <input type="hidden" name="post" value="<%= post._id %>" />
       <input type="submit" value="Add Comment" />
     </form>
+
     <% } %>
 
     <div class="post-comments-list">
       <ul id="post-comments-<%= post._id %>">
-        <% for(comment of post.comments) { %> <%- include('_comment'); -%> <% }
-        %>
+        <% for(comment of post.comments) { %> <%- include('_comment'); -%> <%
+        }%>
       </ul>
     </div>
   </div>

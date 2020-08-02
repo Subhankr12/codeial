@@ -17,16 +17,13 @@ module.exports.create = async (req, res) => {
 
       if (req.xhr) {
         // populate comment with name only
-        comment = await comment
-          .populate("user", "name")
-          .populate("post", "_id")
-          .execPopulate();
+        comment = await comment.populate("user", "name").execPopulate();
 
         return res.status(200).json({
           data: {
             comment: comment,
           },
-          message: "Comment Added",
+          message: "Comment Added!",
         });
       }
 
@@ -42,14 +39,25 @@ module.exports.destroy = async (req, res) => {
   try {
     let comment = await Comment.findById(req.params.id);
 
-    if (comment.user == req.user.id) {
-      let postId = comment.post;
+    let postId = comment.post;
+    let post = await Post.findById(postId);
 
+    if (post.user == req.user.id || comment.user == req.user.id) {
       comment.remove();
 
-      let post = await Post.findByIdAndUpdate(postId, {
+      post = await Post.findByIdAndUpdate(postId, {
         $pull: { comments: req.params.id },
       });
+
+      //send the comment id which was deleted back to the views
+      if (req.xhr) {
+        return res.status(200).json({
+          data: {
+            comment_id: req.params.id,
+          },
+          message: "Comment deleted",
+        });
+      }
 
       return res.redirect("back");
     } else {

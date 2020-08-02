@@ -6,7 +6,11 @@
     <br />
     <% if(locals.user && locals.user.id == comment.user.id) { %>
     <small>
-      <a href="/comments/destroy/<%= comment.id %>">Delete Comment</a>
+      <a
+        href="/comments/destroy/<%= comment.id %>"
+        class="delete-comment-button"
+        >Delete Comment</a
+      >
     </small>
     <% } %> <%= comment.content %>
   </p>
